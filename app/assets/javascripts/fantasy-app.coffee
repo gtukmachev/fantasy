@@ -1,3 +1,3 @@
 dependencies = []
 
-app = angular.module("myApp", dependencies)
+app = angular.module('myApp', dependencies)
