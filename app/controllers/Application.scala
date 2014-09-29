@@ -18,7 +18,8 @@ class Application @Inject() (uuidGenerator: UUIDGenerator) extends Controller {
   def index = Action {
     logger.info("Serving index page...")
 //    Ok(views.html.index())
-    Ok(views.html.BasePage())
+//    Ok(views.html.BasePage())
+    Ok(views.html.IndexPage())
   }
 
   def randomUUID = Action {

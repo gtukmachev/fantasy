@@ -33,5 +33,36 @@
     border-left-color: @brand-danger;
     h1, h2, h3, h4, h5, h6 {  color: @brand-danger; }
   }
+}
+
+.fn-silverMedal {
+  background-image: url(/assets/images/silver-medal.gif);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-color: transparent;
+}
+
+@fn-face-text-color: #bfbfbf;
+@fn-face-text-shadow-color: #d32b01;
+
+.fn-face {
+  height: 800px;
+  background-color: #ccc;
+  display: block;
+  background-image: url(/assets/images/face-autumn-1.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: @fn-face-text-color;
+  text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
+
+  .jumbotron {
+    padding-top: 195px;
+    padding-left: 80px;
+    height: 300px;
+  }
+}
+
+.fn-face .fn-silverMedal {
+  margin-top: 200px;
 
 }
