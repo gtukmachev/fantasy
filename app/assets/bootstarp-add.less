@@ -35,11 +35,6 @@
   }
 }
 
-.fn-silverMedal {
-  background-image: url(/assets/images/silver-medal.gif);
-  background-repeat: no-repeat;
-  background-position: top left;
-}
 
 @fn-brand-text-color: #fefa95;
 @fn-brand-text-shadow-color: #901314;
@@ -66,15 +61,32 @@
   }
 
   .jumbotron.fn-silverMedal {
-    height: 300px;
-    .content {
-      position: absolute;
-      bottom: 0;
-      left: 60px;
+    background-image: url(/assets/images/silver-medal.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    @media (min-width: @grid-float-breakpoint) {
+      height: 300px;
+      .content {
+        position: absolute;
+        bottom: 0;
+        left: 60px;
+      }
     }
+
     h1 {
       color: @fn-face-text-color;
       text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
+    }
+
+    @media (max-width: @grid-float-breakpoint-max) {
+      height: 150px;
+      background-size: contain;
+      .content {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+      }
     }
   }
 }
