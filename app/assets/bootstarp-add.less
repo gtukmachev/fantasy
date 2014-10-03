@@ -41,8 +41,12 @@
   background-position: top left;
 }
 
-@fn-face-text-color: #bfbfbf;
-@fn-face-text-shadow-color: #d32b01;
+@fn-brand-text-color: #fefa95;
+@fn-brand-text-shadow-color: #901314;
+
+@fn-face-text-color: @fn-brand-text-shadow-color;
+@fn-face-text-shadow-color: @fn-brand-text-color;
+
 
 .fn-face {
   height: 800px;
@@ -51,8 +55,11 @@
   background-image: url(/assets/images/face-autumn-1.gif);
   background-repeat: no-repeat;
   background-position: center;
-  color: @fn-face-text-color;
-  text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
+
+  .fn-brand {
+    color: @fn-brand-text-color;
+    text-shadow: 2px 2px 2px @fn-brand-text-shadow-color;
+  }
 
   .jumbotron {
     background-color: transparent;
@@ -64,6 +71,10 @@
       position: absolute;
       bottom: 0;
       left: 60px;
+    }
+    h1 {
+      color: @fn-face-text-color;
+      text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
     }
   }
 }
