@@ -43,6 +43,16 @@
 @fn-face-text-shadow-color: @fn-brand-text-color;
 
 
+.fnFaceText {
+  color: @fn-brand-text-color;
+  text-shadow: 2px 2px 2px @fn-brand-text-shadow-color;
+}
+.fnFaceTextInverted {
+  color: @fn-brand-text-shadow-color;
+  text-shadow: 2px 2px 2px @fn-brand-text-color;
+}
+
+
 .fn-face {
   height: 800px;
   background-color: #ccc;
@@ -52,8 +62,7 @@
   background-position: center;
 
   .fn-brand {
-    color: @fn-brand-text-color;
-    text-shadow: 2px 2px 2px @fn-brand-text-shadow-color;
+    .fnFaceText();
   }
 
   .jumbotron {
@@ -89,4 +98,65 @@
       }
     }
   }
+
+  .navbar {
+
+    @media (min-width: @grid-float-breakpoint) {
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+
+      margin-top: 50px;
+
+
+      .navbar-nav {
+        > li > a.a-btn {
+          background: transparent;
+          -webkit-border-radius: 13px;
+          -moz-border-radius: 13px;
+          border-radius: 13px;
+          font-family: Arial;
+          .fnFaceText();
+          font-size: 20px;
+          padding: 10px 20px 10px 20px;
+          border: solid @fn-brand-text-color 2px;
+          text-decoration: none;
+          margin-right: 10px;
+          -webkit-transition: background .3s ease-in-out;
+          -moz-transition: background .3s ease-in-out;
+
+          &:hover, &:focus {
+            .fnFaceText();
+            background-color: @fn-brand-text-shadow-color;
+          }
+        }
+
+        > .active > a.a-btn {
+          &, &:hover, &:focus {
+            .fnFaceTextInverted();
+            background-color: @fn-brand-text-color;
+          }
+        }
+
+        > .disabled > a.a-btn {
+          &, &:hover, &:focus {
+            border-color: @gray-light;
+            color: @gray-light;
+            text-shadow: none;
+            background-color: transparent;
+          }
+        }
+      }
+
+
+    }
+
+  }
+
+  .navbar-collapse {
+    box-shadow: none;
+  }
 }
+
+
