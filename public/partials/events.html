@@ -1,21 +1,17 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="EventsCtrl as ev">
     <div class="row">
-        <div class="col-lg-4">
-            <div class="bs-callout bs-callout-danger">
-                <h4>News 1</h4>
-                <p>Это CSS-селектор класса Х. Разница между id и классом заключается в том, что одному классу может принадлежать несколько элементов на странице. Используйте классы, когда вы хотите применить стиль к нескольким однотипным элементам. При использовании id вам придется писать стиль для каждого отдельного элемента.</p>
+        <div class="col-lg-6 fn-event" ng-repeat="event in ev.events">
+            <div class="fn-event-header">
+                <div class="fn-event-title">{{event.title}}</div>
+                <div class="fn-event-place">{{event.date}}, {{event.place}}</div>
+                <div class="fn-event-toolbar">
+                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-play"></span></button>
+                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-camera"></span></button>
+                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span></button>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="bs-callout bs-callout-info">
-                <h4>News 1</h4>
-                <p>Это CSS-селектор класса Х. Разница между id и классом заключается в том, что одному классу может принадлежать несколько элементов на странице. Используйте классы, когда вы хотите применить стиль к нескольким однотипным элементам. При использовании id вам придется писать стиль для каждого отдельного элемента.</p>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="bs-callout bs-callout-warning">
-                <h4>News 1</h4>
-                <p>Это CSS-селектор класса Х. Разница между id и классом заключается в том, что одному классу может принадлежать несколько элементов на странице. Используйте классы, когда вы хотите применить стиль к нескольким однотипным элементам. При использовании id вам придется писать стиль для каждого отдельного элемента.</p>
+            <div class="fn-event-content">
+                <p>{{event.content}}</p>
             </div>
         </div>
     </div>

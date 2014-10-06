@@ -1,10 +1,12 @@
 @import "bootstrap/css/_variables.less";
 
 @callout-border: @gray-lighter;
+@main-background-color: #2b1108;
+@main-text-color: #fffee2;
 
 body {
-  background-color: #2b1108;
-  color: #fffee2;
+  background-color: @main-background-color;
+  color: @main-text-color;
 }
 
 .debug-border {
@@ -76,6 +78,18 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+  }
+
+  &.fn-small-height {
+    height: 80px;
+
+    .navbar {
+
+      @media (min-width: @grid-float-breakpoint) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    }
   }
 
   .fn-brand {
@@ -175,18 +189,6 @@ body {
   .navbar-collapse {
     box-shadow: none;
   }
-}
-
-.fn-face.fn-small-height {
-  height: 80px;
-
-  .navbar {
-
-    @media (min-width: @grid-float-breakpoint) {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  }
 
 }
 
@@ -201,5 +203,52 @@ body {
   }
 }
 
+.fn-event {
+  background-color: fadeout(@main-background-color, 50%);
+  color: @main-text-color;
+
+//  padding-left: 0;
+//  padding-right: 0;
+
+  .fn-event-header {
+    text-shadow: 2px 2px 2px #916225;
+//    border: 1px #cafff7 solid;
+    background-image: url('/assets/images/rah-event1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left -50px;
+
+    .fn-event-title{
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: @font-size-h3;
+    }
+
+    .fn-event-place{
+      margin-right: 20px;
+      margin-bottom: 10px;
+      text-align: right;
+      font-size: @font-size-h4;
+
+    }
+    .fn-event-toolbar{
+      margin-right: 20px;
+      padding-bottom: 10px;
+      text-align: right;
+      font-size: @font-size-h4;
+
+      .btn-default {
+        background: fadeout(@main-background-color, 30%);
+        color: @brand-warning;
+      }
+    }
+
+  }
+
+  .fn-event-content {
+    padding: 7px;
+    font-size: @font-size-base;
+  }
+}
 
 

@@ -1,4 +1,4 @@
-dependencies = ['ngRoute','fnParticipants']
+dependencies = ['ngRoute','fnParticipants', 'fnEventsModule']
 
 app = angular.module('myApp', dependencies)
 
