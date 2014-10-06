@@ -31,7 +31,7 @@
                                 <a class="a-btn" href="#about" ng-click="nav.onNavigationClick('about')">О нас</a>
                             </li>
                             <li ng-class="{'active': nav.current == 'events'}">
-                                <a class="a-btn" href="#events" ng-click="nav.onNavigationClick('events')">События</a>
+                                <a class="a-btn" href="#/events" ng-click="nav.onNavigationClick('events')">События</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="a-btn dropdown-toggle" data-toggle="dropdown">Ещё <span class="caret"></span></a>
@@ -67,12 +67,7 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Hi!</h1>
-            <p>We are here!</p>
-        </div>
-    </div>
+    <div ng-view></div>
 
     <div class="container-fluid fn-footer">
         <div class="text-right small">
@@ -83,6 +78,7 @@
     <script src='@routes.Assets.at("jquery/jquery-1.11.1.min.js")' type="text/javascript"></script>
     <script src='@routes.Assets.at("bootstrap/js/bootstrap.min.js")' type="text/javascript"></script>
     <script src='@routes.Assets.at("angular/angular.js")' type="text/javascript"></script>
+    <script src='@routes.Assets.at("angular/angular-route.js")' type="text/javascript"></script>
     <script src='@routes.Assets.at("javascripts/fantasy-app.js")' type="text/javascript"></script>
 </body>
 </html>

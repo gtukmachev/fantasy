@@ -1,9 +1,19 @@
-dependencies = []
+dependencies = ['ngRoute']
 
 app = angular.module('myApp', dependencies)
 
-class NavigationController
+app.config ($routeProvider) ->
+  $routeProvider
+  .when('/events', {
+      templateUrl: '/assets/partials/events.html'
+    })
+#  .when('/users/create', {
+#      templateUrl: '/assets/partials/create.html'
+#    })
+  .otherwise({redirectTo: '/'})
 
+
+class NavigationController
     constructor: (@$log) ->
       @$log.debug "constructing CreateUserController"
       @faceOpened = true
@@ -14,3 +24,4 @@ class NavigationController
 
 
 app.controller('NavigationController', NavigationController)
+
