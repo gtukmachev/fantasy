@@ -1,0 +1,11 @@
+<div class="container" ng-controller="ParticipantsCtrl as par">
+    <div style="height: 100px;"></div>
+    <div class="row">
+        <div class="col-lg-4 about-block" ng-repeat="person in par.persons">
+            <img ng-src="{{person.photo}}" alt="" class="img-circle pull-left" height="150" width="150"/>
+            <div class="about-title">{{person.role}}</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>

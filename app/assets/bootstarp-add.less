@@ -2,6 +2,15 @@
 
 @callout-border: @gray-lighter;
 
+body {
+  background-color: #2b1108;
+  color: #fffee2;
+}
+
+.debug-border {
+  border: 1px red solid;
+}
+
 .bs-callout {
   padding: 20px;
   margin: 20px 0;
@@ -10,27 +19,27 @@
   border-radius: 3px;
 
   &.bs-callout-primary {
-    border-left-color: @brand-primary;
+    border-color: @brand-primary;
     h1, h2, h3, h4, h5, h6 {  color: @brand-primary; }
   }
 
   &.bs-callout-success {
-    border-left-color: @brand-success;
+    border-color: @brand-success;
     h1, h2, h3, h4, h5, h6 {  color: @brand-success; }
   }
 
   &.bs-callout-info {
-    border-left-color: @brand-info;
+    border-color: @brand-info;
     h1, h2, h3, h4, h5, h6 {  color: @brand-info; }
   }
 
   &.bs-callout-warning {
-    border-left-color: @brand-warning;
+    border-color: @brand-warning;
     h1, h2, h3, h4, h5, h6 {  color: @brand-warning; }
   }
 
   &.bs-callout-danger {
-    border-left-color: @brand-danger;
+    border-color: @brand-danger;
     h1, h2, h3, h4, h5, h6 {  color: @brand-danger; }
   }
 }
@@ -53,14 +62,21 @@
 }
 
 .fn-face {
-  height: 800px;
-  display: block;
-  background-image: url(/assets/images/face-autumn-1.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   -webkit-transition: height .3s ease-in-out, margin .3s ease-in-out;
   -moz-transition: height .3s ease-in-out, margin .3s ease-in-out;
+
+  .fn-face-background {
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-image: url(/assets/images/face-autumn-1.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
   .fn-brand {
     .fnFaceText();
@@ -172,6 +188,17 @@
     }
   }
 
+}
+
+.about-block {
+  > img.img-circle {
+    margin-right: 5px;
+  }
+
+  .about-title {
+    padding-top: 20px;
+    font-size: @font-size-h3;
+  }
 }
 
 
