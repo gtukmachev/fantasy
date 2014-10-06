@@ -8,15 +8,17 @@ class NavigationController
       @$log.debug "constructing CreateUserController"
       @faceOpened = true
       @cnt = 0
+      @current = 'about'
 
     collapseFace: () -> @faceOpened = false
     openFace: () -> @faceOpened = true
     isFaceOpen: () -> @faceOpened
 
 
-    onNavigationClick: () ->
+    onNavigationClick: (@current) ->
       @cnt += 1
-      @faceOpened = !@faceOpened
+      @faceOpened = @current == 'about'
+
 #      @collapseFace()
 #      fnFace = $(".fn-face")
 #      fnFace.removeClass("fn-small-height")

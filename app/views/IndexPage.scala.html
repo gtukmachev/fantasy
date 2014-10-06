@@ -27,20 +27,20 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="active">
-                                <a class="a-btn" href="#about">О нас</a>
+                            <li ng-class="{'active': nav.current == 'about'}">
+                                <a class="a-btn" href="#about" ng-click="nav.onNavigationClick('about')">О нас</a>
                             </li>
-                            <li>
-                                <a class="a-btn" href="" ng-click="nav.onNavigationClick()">События cnt:{{nav.cnt}} isFaceOpen:{{nav.isFaceOpen()}}</a>
+                            <li ng-class="{'active': nav.current == 'events'}">
+                                <a class="a-btn" href="#events" ng-click="nav.onNavigationClick('events')">События</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="a-btn dropdown-toggle" data-toggle="dropdown">Ещё <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Концерты</a></li>
-                                    <li><a href="#">Наш репертуар</a></li>
+                                    <li ng-class="{'active': nav.current == 'concerts'}"><a href="#concerts" ng-click="nav.onNavigationClick('concerts')">Концерты</a></li>
+                                    <li ng-class="{'active': nav.current == 'repertoire'}"><a href="#repertoire" ng-click="nav.onNavigationClick('repertoire')">Наш репертуар</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="#">Наши достижения</a></li>
-                                    <li><a href="#">Напишите нам</a></li>
+                                    <li ng-class="{'active': nav.current == 'achievements'}"><a href="#achievements" ng-click="nav.onNavigationClick('achievements')">Наши достижения</a></li>
+                                    <li ng-class="{'active': nav.current == 'writeToUs'}"><a href="#writeToUs" ng-click="nav.onNavigationClick('writeToUs')">Напишите нам</a></li>
                                 </ul>
                             </li>
                         </ul>
