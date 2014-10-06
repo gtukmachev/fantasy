@@ -10,7 +10,7 @@
     <link rel="stylesheet" href='@routes.Assets.at("bootstarp-add.css")'>
 </head>
 <body>
-    <div class="container-fluid fn-face">
+    <div class="container-fluid fn-face" ng-controller="NavigationController as nav" ng-class="{'fn-small-height': !nav.faceOpened}">
 
         <div class="container">
 
@@ -31,7 +31,7 @@
                                 <a class="a-btn" href="#about">О нас</a>
                             </li>
                             <li>
-                                <a class="a-btn" href="#events">События</a>
+                                <a class="a-btn" href="" ng-click="nav.onNavigationClick()">События cnt:{{nav.cnt}} isFaceOpen:{{nav.isFaceOpen()}}</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="a-btn dropdown-toggle" data-toggle="dropdown">Ещё <span class="caret"></span></a>
@@ -49,20 +49,28 @@
             </div>
         </div> <!-- /container -->
 
-
-        <div class="col-lg-offset-1 col-lg-6 col-sm-5">
-            <div class="jumbotron fn-brand">
-                <h1>Фантазия</h1>
-                <p>Женский вокальный академический ансамбль</p>
-            </div>
-        </div>
-        <div class="col-lg-5 col-sm-6">
-            <div class="jumbotron fn-brand fn-silverMedal">
-                <div class="content">
-                    <h1>Серебрянная медаль</h1>
-                    <p>на Мировых Хоровых Играх, Рига 2014</p>
+        <div ng-show="nav.faceOpened">
+            <div class="col-lg-offset-1 col-lg-6 col-sm-5">
+                <div class="jumbotron fn-brand">
+                    <h1>Фантазия</h1>
+                    <p>Женский вокальный академический ансамбль</p>
                 </div>
             </div>
+            <div class="col-lg-5 col-sm-6">
+                <div class="jumbotron fn-brand fn-silverMedal">
+                    <div class="content">
+                        <h1>Серебрянная медаль</h1>
+                        <p>на Мировых Хоровых Играх, Рига 2014</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hi!</h1>
+            <p>We are here!</p>
         </div>
     </div>
 

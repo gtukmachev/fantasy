@@ -60,6 +60,8 @@
   background-image: url(/assets/images/face-autumn-1.gif);
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-transition: height .3s ease-in-out, margin .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out, margin .3s ease-in-out;
 
   .fn-brand {
     .fnFaceText();
@@ -109,6 +111,8 @@
 
       margin-top: 50px;
       margin-bottom: 100px;
+      -webkit-transition: height .3s ease-in-out, margin .3s ease-in-out;
+      -moz-transition: height .3s ease-in-out, margin .3s ease-in-out;
 
 
       .navbar-nav {
@@ -159,5 +163,19 @@
     box-shadow: none;
   }
 }
+
+.fn-face.fn-small-height {
+  height: 80px;
+
+  .navbar {
+
+    @media (min-width: @grid-float-breakpoint) {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+}
+
 
 
