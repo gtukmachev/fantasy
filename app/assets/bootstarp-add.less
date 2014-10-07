@@ -192,57 +192,77 @@ body {
 
 }
 
-.fn-list-block-title(){
+@fn-box-border-radius: @border-radius-large;
+.fn-top-rounded(@radius :@fn-box-border-radius) {
+          border-top-left-radius:  @radius;
+          border-top-right-radius: @radius;
+     -moz-border-top-left-radius:  @radius;
+     -moz-border-top-right-radius: @radius;
+  -webkit-border-top-left-radius:  @radius;
+  -webkit-border-top-right-radius: @radius;
+}
+
+.fn-rounded(@radius :@fn-box-border-radius) {
+          border-radius: @radius;
+     -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+
+.fn-block(){
+  .fn-rounded();
+  padding: 0;
+  margin: 0;
+
   h2, .h2 {
-    font-size: @font-size-h4;
+  //    border: 1px #ff1cd9 solid;
+      font-size: @font-size-h4;
+      padding: 5px;
+      margin: 0;
+  //    padding-top: 20px;
+  //    margin-left: 20px;
   }
   h3, .h3 {
+    padding: 5px;
+    margin: 0;
+//    border: 1px #fff5fa solid;
+//    margin-right: 20px;
+//    margin-bottom: 10px;
+    text-align: right;
     font-size: @font-size-h5;
   }
 
 }
 
 .about-block {
+    .fn-block();
+
   > img.img-circle {
     margin-right: 5px;
   }
 
-  .about-title {
-    padding-top: 20px;
-    font-size: @font-size-h4;
-  }
 }
 
 
 .fn-event {
-  background-color: fadeout(@main-background-color, 50%);
+  .fn-block();
+  background-color: @main-background-color;
   color: @main-text-color;
 
-//  padding-left: 0;
-//  padding-right: 0;
 
   .fn-event-header {
+//    border: 1px transparent solid;
     text-shadow: 2px 2px 2px #916225;
 //    border: 1px #cafff7 solid;
+
     background-image: url('/assets/images/rah-event1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left -50px;
+    background-position: left top;
+    .fn-top-rounded();
 
-    .fn-event-title{
-      margin-top: 20px;
-      margin-left: 20px;
-      font-size: @font-size-h4;
-    }
-
-    .fn-event-place{
-      margin-right: 20px;
-      margin-bottom: 10px;
-      text-align: right;
-      font-size: @font-size-h5;
-
-    }
     .fn-event-toolbar{
+//      border: 1px #58baff solid;
       margin-right: 20px;
       padding-bottom: 10px;
       text-align: right;
@@ -257,6 +277,7 @@ body {
   }
 
   .fn-event-content {
+//    border: 1px #a5ff34 solid;
     padding: 7px;
     font-size: @font-size-base;
   }

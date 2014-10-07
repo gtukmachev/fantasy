@@ -1,17 +1,19 @@
 <div class="container-fluid" ng-controller="EventsCtrl as ev">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 fn-event" ng-repeat="event in ev.events">
-            <div class="fn-event-header">
-                <div class="fn-event-title">{{event.title}}</div>
-                <div class="fn-event-place">{{event.date}}, {{event.place}}</div>
-                <div class="fn-event-toolbar">
-                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-play"></span></button>
-                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-camera"></span></button>
-                    <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span></button>
+        <div class="col-lg-6 col-md-6 col-sm-6" ng-repeat="event in ev.events">
+            <div class="fn-event">
+                <div class="fn-event-header">
+                    <h2>{{event.title}}</h2>
+                    <h3>{{event.date}}, {{event.place}}</h3>
+                    <div class="fn-event-toolbar">
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-camera"></span></button>
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span></button>
+                    </div>
                 </div>
-            </div>
-            <div class="fn-event-content">
-                <p>{{event.content}}</p>
+                <div class="fn-event-content">
+                    <p>{{event.content}}</p>
+                </div>
             </div>
         </div>
     </div>
