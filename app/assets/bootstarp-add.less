@@ -4,6 +4,10 @@
 @main-background-color: #2b1108;
 @main-text-color: #fffee2;
 
+@fn-face-text-color: #fefa95;
+@fn-face-text-shadow-color: #901314;
+
+
 body {
   background-color: @main-background-color;
   color: @main-text-color;
@@ -47,23 +51,22 @@ body {
 }
 
 
-@fn-brand-text-color: #fefa95;
-@fn-brand-text-shadow-color: #901314;
-
-@fn-face-text-color: @fn-brand-text-shadow-color;
-@fn-face-text-shadow-color: @fn-brand-text-color;
-
-
-.fnFaceText {
-  color: @fn-brand-text-color;
-  text-shadow: 2px 2px 2px @fn-brand-text-shadow-color;
-}
-.fnFaceTextInverted {
-  color: @fn-brand-text-shadow-color;
-  text-shadow: 2px 2px 2px @fn-brand-text-color;
-}
 
 .fn-face {
+
+  .fnFaceTextColor() {
+    color: @fn-face-text-color;
+    text-shadow: 2px 2px 2px @fn-face-text-shadow-color;
+  }
+  .fnFaceTextColorInverted() {
+    color: @fn-face-text-shadow-color;
+    text-shadow: 2px 2px 2px @fn-face-text-color;
+  }
+  .fnFaceFont() {
+    font-size: 20px;
+    font-family: Arial;
+  }
+
   -webkit-transition: height .3s ease-in-out, margin .3s ease-in-out;
   -moz-transition: height .3s ease-in-out, margin .3s ease-in-out;
 
@@ -78,6 +81,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    &.fn-small-height {
+      height: 80px;
+    }
   }
 
   &.fn-small-height {
@@ -92,12 +98,10 @@ body {
     }
   }
 
-  .fn-brand {
-    .fnFaceText();
-  }
-
   .jumbotron {
     background-color: transparent;
+    color: @fn-face-text-color;
+    text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
   }
 
   .jumbotron.fn-silverMedal {
@@ -114,10 +118,6 @@ body {
       }
     }
 
-    h1 {
-      color: @fn-face-text-color;
-      text-shadow: 1px 1px 0 @fn-face-text-shadow-color, -1px -1px 0 @fn-face-text-shadow-color, -1px 1px 0 @fn-face-text-shadow-color, 1px -1px 0 @fn-face-text-shadow-color;
-    }
 
     @media (max-width: @grid-float-breakpoint-max) {
       height: 150px;
@@ -131,7 +131,6 @@ body {
   }
 
   .navbar {
-
     @media (min-width: @grid-float-breakpoint) {
       background: transparent;
       border-color: transparent;
@@ -150,26 +149,26 @@ body {
           -webkit-border-radius: 13px;
           -moz-border-radius: 13px;
           border-radius: 13px;
-          font-family: Arial;
-          .fnFaceText();
+          .fnFaceFont();
+          .fnFaceTextColor();
           font-size: 20px;
           padding: 10px 20px 10px 20px;
-          border: solid @fn-brand-text-color 2px;
+          border: solid @fn-face-text-color 2px;
           text-decoration: none;
           margin-right: 10px;
           -webkit-transition: background .3s ease-in-out;
           -moz-transition: background .3s ease-in-out;
 
           &:hover, &:focus {
-            .fnFaceText();
-            background-color: @fn-brand-text-shadow-color;
+            .fnFaceTextColor();
+            background-color: @fn-face-text-shadow-color;
           }
         }
 
         > .active > a.a-btn {
           &, &:hover, &:focus {
-            .fnFaceTextInverted();
-            background-color: @fn-brand-text-color;
+            .fnFaceTextColorInverted();
+            background-color: @fn-face-text-color;
           }
         }
 
@@ -182,7 +181,11 @@ body {
           }
         }
       }
-
+      
+      .navbar-brand {
+        .fnFaceFont();
+        .fnFaceTextColor();
+      }
     }
   }
 
@@ -246,6 +249,7 @@ body {
 
 .fn-event {
   .fn-block();
+  border: 1px @main-text-color solid;
   background-color: @main-background-color;
   color: @main-text-color;
 
@@ -280,6 +284,10 @@ body {
     padding: 7px;
     font-size: @font-size-base;
   }
+}
+
+.fn-footer{
+  padding: 10px 0;
 }
 
 

@@ -19,9 +19,11 @@ class NavigationController
       @faceOpened = true
 
     onNavigationClick: (current) ->
-      @faceOpened = current == 'about'
+      @faceOpened = current == ''
 
     isSelected: (checkedUrl) -> @$location.path() == ('/'+checkedUrl)
+
+    isFaceOpened: () -> @$location.path() == '/'
 
 
 app.controller('NavigationController', NavigationController)
